@@ -1,0 +1,26 @@
+:root {
+  --main-color: purple;
+  --secondary-color: rgb(129, 0, 227);
+}
+
+main {
+  --main-color: palevioletred;
+}
+
+main h1 {
+  color: var(--main-color);
+}
+
+button {
+  background-color: var(--main-color);
+}
+
+button:hover {
+  --main-color: red;
+
+  /* background-color: var(--secondary-color); */
+}
+
+main section {
+  border: 2px solid var(--main-color);
+}

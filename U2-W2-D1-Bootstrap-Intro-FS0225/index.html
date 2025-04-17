@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hello, world!</h1>
+    </div>
+
+    <!-- i 3 elementi fondamentali di  una griglia sono:
+     
+        1) container (almeno uno attorno ad ogni row)
+        2) row (l'elemento che suddivide lo spazio in 12 segmenti)
+        3) col (l'elemento che occupa n segmenti)
+    -->
+
+    <!-- N.B. evita classi custom sugli elementi strutturali per quanto possibile (col, row, container) 
+        se devi applicare uno stile (es. colore di sfondo, applicalo ad un div interno alla col -vedi sotto-) 
+    -->
+
+    <!-- N.B.2 evita margini orizzontali (potrebbero rompere il comportamento della griglia!) -->
+
+    <div class="container bg-warning">
+        <div class="row">
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="bg-black text-white">1</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="bg-black text-white">2</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="bg-black text-white">3</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="bg-black text-white">4</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="bg-black text-white">5</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="bg-black text-white">6</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="bg-black text-white">7</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="bg-black text-white">8</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="bg-black text-white">9</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="bg-black text-white">10</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="bg-black text-white">11</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="bg-black text-white">12</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- chiuderemo i contenitori nel caso in cui avessimo bisogno di avere l'intera width a disposizione (es. con questa immagine) -->
+    <img src="https://images.unsplash.com/photo-1742943892627-f7e4ddf91224?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        style="height: 30vh;" class=" object-fit-cover w-100 mt-2 mt-sm-3 mt-md-4" />
+    <!-- abbiamo modificato l'immagine sulle diverse dimensioni di schermo, i valori cambiano tra mobile, small e medium, e rimane poi applicato l'ultimo valore 4 sia per lg che xl e xxl -->
+
+    <!-- riapro il contenitore nonappena ho bisogno di creare un'altra griglia -->
+    <div class="container" style="background-color: palegreen">
+        <div class="row mt-4">
+            <div class="col-4 col-md-1 col-xl-3">
+                <div class="bg-black text-white">1</div>
+            </div>
+            <div class="col-4 col-md-7 col-xl-3">
+                <div class="bg-black text-white">2</div>
+            </div>
+            <div class="col-4 col-md-2 offset-md-2 col-xl-3 offset-xl-3">
+                <div class="bg-black text-white">3</div>
+            </div>
+        </div>
+
+
+        <div class="row mt-4" style="justify-content: center">
+            <div class="col-12 col-md-4 col-xl-2">
+                <img src="https://images.unsplash.com/photo-1742995917580-becb015f088d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="full moon" class="img-fluid">
+            </div>
+            <div class="col-12 col-md-8 col-xl-10">
+                <div class="px-md-5">
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, quos?</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A assumenda atque at officiis
+                        perspiciatis
+                        quod dignissimos rerum doloremque reprehenderit reiciendis iste, eos vel hic eum nisi doloribus
+                        consectetur dolor repellendus.
+                        Cumque soluta quidem a esse ipsum praesentium. Nemo similique molestiae maxime pariatur
+                        inventore
+                        autem, reprehenderit aperiam accusamus quas ea perferendis repellat dolorum odio! Impedit
+                        ducimus
+                        earum temporibus quod aspernatur consectetur?
+                        Dolor inventore quaerat iste deserunt consectetur fugiat, tenetur aliquam incidunt quam nostrum?
+                        Eos
+                        nobis maiores vel, odit dolorum natus alias voluptate corporis eaque quae, fuga facilis ipsam?
+                        Veritatis, vitae quas!</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

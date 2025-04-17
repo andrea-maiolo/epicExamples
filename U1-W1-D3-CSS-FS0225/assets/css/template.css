@@ -1,0 +1,117 @@
+/* import del font dal css */
+@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 24px;
+  color: red;
+  line-height: 1.4;
+}
+
+/* reset sul body */
+
+body {
+  margin: 0;
+}
+
+/* reset sulle proprietà default di button, input, select e textarea */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Coming Soon", cursive;
+}
+
+h1 {
+  background: cadetblue;
+  /* ARROTONDAMENTO DEI BORDI */
+  border-radius: 20px;
+}
+.selected {
+  font-size: 30px;
+  color: yellow;
+  background-color: black;
+}
+
+article {
+  color: hsl(320, 80%, 30%);
+  line-height: 1;
+  font-size: 16px;
+}
+
+.article-title {
+  margin-top: 1rem;
+}
+
+.fa-wrench {
+  font-size: 16px;
+}
+
+h1:hover {
+  color: black;
+}
+
+h1:active {
+  color: yellow;
+}
+
+/* sostituiamo i pallini con altro contenuto */
+main ul li::marker {
+  content: "🚀";
+}
+
+/* selezioniamo solo il primo elemento */
+main ul li:first-child {
+  text-decoration: underline;
+}
+
+/* selezioniamo solo il terzo elemento */
+main ul li:nth-child(3) {
+  font-weight: bold;
+}
+
+/* selezioniamo solo l'ultimo elemento */
+main ul li:last-child {
+  text-decoration: line-through;
+}
+
+/* seleziono tutte le p, ma NON quelle interne ad un article */
+p:not(article p) {
+  font-weight: 100;
+}
+
+/* faccio qualcosa su tutti gli li, tranne l'ultimo */
+ul li:not(:last-child) {
+}
+
+header ul {
+  text-align: right;
+}
+header ul li {
+  display: inline-block;
+}
+/* applico un margin-right dinamicamente a tutti gli elementi del menu, tranne l'ultimo */
+header ul li:not(:last-child) {
+  margin-right: 1.5rem;
+}

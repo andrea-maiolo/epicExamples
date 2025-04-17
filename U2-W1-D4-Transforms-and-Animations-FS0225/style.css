@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 {
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin-inline: auto;
+  background-color: #ebebeb;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.rectangle {
+  width: 250px;
+  height: 25px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aqua {
+  background-color: aqua;
+}
+
+.coral {
+  background-color: coral;
+}
+
+.crimson {
+  background-color: crimson;
+}
+
+.green {
+  background-color: palegreen;
+}

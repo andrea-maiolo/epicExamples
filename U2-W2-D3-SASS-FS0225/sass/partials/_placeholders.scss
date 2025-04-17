@@ -1,0 +1,15 @@
+%reset-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+}
+
+%reset-font {
+  font: {
+    family: inherit;
+    weight: inherit;
+    size: inherit;
+  }
+  color: inherit;
+  line-height: inherit;
+}

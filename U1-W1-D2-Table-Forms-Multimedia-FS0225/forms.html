@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U1-W1-D2 Forms</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        main {
+            width: 400px;
+            margin-inline: auto;
+        }
+
+        label {
+            display: block;
+        }
+
+        form {
+            margin-top: 16px;
+        }
+
+        fieldset input {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+
+        #specialty-fieldset input {
+            width: auto;
+        }
+
+        #specialty-fieldset label {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- tipologie di input disponibili: -->
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
+    <main>
+        <h1>Forms</h1>
+        <form onsubmit="alert('form inviato')">
+            <fieldset>
+                <legend>Anagrafica</legend>
+                <!-- il campo for del tag label serve a collegare la label al suo input di riferimento, se verrà cliccata il campo input riceverà il focus -->
+                <label for="name-input">Nome</label>
+                <input type="text" id="name-input" placeholder="inserisci il tuo nome qui" required>
+
+                <label for="surname-input">Cognome</label>
+                <input type="text" id="surname-input" placeholder="inserisci il tuo cognome qui" required>
+
+                <label for="age-input">Età</label>
+                <input type="number" id="age-input" placeholder="0" min="18" max="80" required>
+            </fieldset>
+            <fieldset>
+                <legend>Web</legend>
+                <label for="url-input">URL</label>
+                <input type="url" id="url-input" placeholder="https://...." required>
+
+                <input type="checkbox" id="check-input" checked style="width: auto;">
+                <label for="check-input" style="display: inline">Has GitHub</label>
+
+            </fieldset>
+
+            <!-- i campi radio sono pensati per avere una selezione univoca (un solo elemento selezionato alla volta) -->
+            <!-- questo comportamento è dato dal fatto che ogni radio input ha come valore dell'attributo name lo stesso testo (specialty) -->
+            <fieldset id="specialty-fieldset">
+                <legend>Specialty</legend>
+
+                <label for="radio-input-1">HTML</label>
+                <input type="radio" name="specialty" id="radio-input-1">
+
+                <label for="radio-input-2">CSS</label>
+                <input type="radio" name="specialty" id="radio-input-2">
+
+                <label for="radio-input-3">JS</label>
+                <input type="radio" name="specialty" id="radio-input-3">
+            </fieldset>
+
+            <fieldset>
+                <legend>Note</legend>
+
+
+                <textarea id="textarea" placeholder="inserisci eventuali note" maxlength="100" rows="10"
+                    style="width:100%; resize: vertical;"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Region</legend>
+
+                <label for="region-select">Regione</label>
+                <select id="region-select" required>
+                    <option value="">Seleziona una regione</option>
+                    <option value="piemonte">Piemonte</option>
+                    <option value="lombardia">Lombardia</option>
+                    <option value="veneto">Veneto</option>
+                    <option value="fvg">Friuli Venezia Giulia</option>
+                </select>
+            </fieldset>
+
+            <div style="text-align: center; margin-top: 16px;">
+                <input type="button" value="Button">
+                <button type="submit">Invio</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </main>
+
+</body>
+
+</html>

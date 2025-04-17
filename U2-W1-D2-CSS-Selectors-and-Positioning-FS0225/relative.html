@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U2-W1-D2 Positioning</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        /* position relative cambia natura all'elemento, che comincerà a spostarsi relativamente alla sua posizione di partenza.
+           gli elementi che gli stavano attorno continuano a rispettare la sua presenza anche se l'elemento non c'è più (si è spostato altrove)
+        */
+        .aqua {
+            position: relative;
+            top: 60px;
+            left: 170px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Position Relative</h1>
+        <div class="container">
+            <div class="box aqua"></div>
+            <div class="box coral"></div>
+            <div class="box crimson"></div>
+        </div>
+    </main>
+
+</body>
+
+</html>

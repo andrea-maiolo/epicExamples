@@ -1,0 +1,32 @@
+@mixin box($borderSize: 1px, $boxColor: black, $radius: 20px) {
+  width: 200px;
+  height: 200px;
+  margin-block: 2rem;
+  display: inline-block;
+  vertical-align: bottom;
+  border-radius: $radius;
+  border: $borderSize solid scale-color($boxColor, $lightness: -25%);
+  color: white;
+  background-color: $boxColor;
+  box-shadow: 0 3px 20px rgb(0 0 0 / 55%);
+}
+
+@mixin dynamicBox($size, $propertyName, $propertyValue) {
+  width: $size;
+  height: $size;
+  margin-block: 2rem;
+  display: inline-block;
+  vertical-align: bottom;
+  border: 2px solid black;
+
+  // 7) INTERPOLARE VALORI DINAMICI #{}
+  // il suffisso della proprietà background-* dipenderà dal valore del parametro $propertyName
+  // si genererà o come background-image o come background-color
+  background-#{$propertyName}: $propertyValue;
+
+  @if ($propertyName == "image") {
+    background-size: cover;
+  } @else {
+    border-radius: 10px;
+  }
+}

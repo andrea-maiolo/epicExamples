@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U1-W1-D2 Multimedia</title>
+</head>
+
+<body>
+
+    <h1>Multimedia</h1>
+
+    <div>
+
+        <!-- <audio src="./assets/audio/pianos-by-jtwayne.mp3" controls loop autoplay></audio> -->
+        <audio controls loop>
+            <source src="./assets/audio/pianos-by-jtwayne.mp3" type="audio/mpeg">
+
+            Audio non supportato
+        </audio>
+    </div>
+
+    <div>
+        <video src="./assets/video/IMG_6303.mp4" controls poster="./assets/imgs/earth-md.jpg" height="488"></video>
+    </div>
+
+    <div>
+        <!-- in questo caso abbiamo fornito 3 possibilità di immagini di diversa grandezza e peso, e sarà il browser a 
+         caricare all'utente quella più giusta per la dimensione di schermo corrente -->
+        <picture>
+            <source media="(min-width: 1200px)" srcset="./assets/imgs/earth-hi.jpg">
+            <source media="(min-width: 768px)" srcset="./assets/imgs/earth-md.jpg">
+
+            <img src="./assets/imgs/earth-sm.jpg" alt="earth small">
+        </picture>
+    </div>
+
+    <!-- IFRAMES -->
+    <!-- un iframe è un portale verso un'altra pagina, spesso è una pagina creata apposta per essere inclusa (embed) in un'altra pagina html (vedi youtube o google maps)  -->
+    <div>
+        <!-- includiamo un portale verso il sito epicode nella nostra pagina -->
+        <iframe src="https://epicode.com" frameborder="0" width="100%" height="700"></iframe>
+    </div>
+
+    <div>
+        <!-- codice fornito dalla pagina web del video youtube tramite tasto "condividi" ed "incorpora" -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sOnsyLAXfSI?si=DnMm9KWXkYSfy_Cr"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div>
+        <!-- codice fornito dalla pagina web di google maps tramite tasto "condividi" ed "incorpora" -->
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3493.2181905308053!2d12.47481321199795!3d41.871855165684636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6173fb8c8ea7%3A0x1a413c9507f97391!2sEPICODE!5e1!3m2!1sit!2sit!4v1741692187881!5m2!1sit!2sit"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+
+</body>
+
+</html>

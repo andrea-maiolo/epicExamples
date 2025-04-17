@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&family=Montserrat:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f5f5;
+  color: #18314f;
+  font-family: "EB Garamond", serif;
+  font-size: 1.5rem;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  line-height: 1;
+  font-weight: 400;
+  margin: 3em 0;
+}
+
+h2 {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  margin-bottom: 3em;
+  letter-spacing: 8px;
+  text-align: center;
+  color: #8bc34a;
+}
+
+/* h2::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #18314f;
+  width: 20%;
+  margin: 3em auto 0;
+} */
+
+h2 span {
+  font-size: 5em;
+  font-weight: 700;
+  display: block;
+  color: #18314f;
+}
+
+a {
+  color: #8bbeb2;
+}
+a:hover {
+  color: #7ae7c7;
+}
+
+main section {
+  background: white;
+  box-shadow: 0 7px 10px -10px rgb(0 0 0 / 25%);
+  width: 80%;
+  margin: 50px auto;
+  padding: 50px;
+  border-radius: 20px;
+  border: 3px solid #98ca60ba;
+}
+
+.the-ones-you-know code {
+  font-weight: 600;
+}
+
+.universal code {
+  background: #d1ecef;
+  padding: 0.25em;
+}
+
+.direct-children .example {
+  padding: 1em;
+  background: #d1ecef;
+}
+
+.direct-children .example p {
+  margin: 0;
+}
+
+.adjacent-sibling,
+.general-sibling h2,
+.child-selector,
+.before-after {
+  text-align: center;
+}
+
+.adjacent-sibling .box,
+.general-sibling .box,
+.child-selector .box,
+.before-after .box {
+  height: 75px;
+  width: 75px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.general-sibling ul {
+  text-align: left;
+}
+
+.inputs label {
+  display: block;
+}
+
+.inputs input,
+.inputs textarea {
+  border-radius: 6px;
+  border-width: 1px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.target-selector ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+/* =================================
+   Universal 
+   ================================= */
+
+/* .universal h2,
+.universal h2 span,
+.universal p,
+.universal ul,
+.universal a,
+.universal code {
+  color: red;
+  } */
+
+/* il where non aggiunge specificità */
+/* .universal :where(h2, h2 span, p, ul, a, code) {
+  color: red;
+} */
+
+/* l'is invece aggiunge specificità (da usarlo quando where non funziona) */
+/* .universal :is(h2, h2 span, p, ul, a, code) {
+  color: red;
+} */
+
+.universal * {
+  color: red;
+}
+
+/* =================================
+   Direct children
+   ================================= */
+
+/* .direct-children p:not(.example p) {
+  color: red;
+} */
+
+.direct-children > p {
+  color: red;
+}
+
+/* =================================
+   Adjacent siblings
+   ================================= */
+
+.adjacent-sibling div + p {
+  color: blue;
+}
+
+.adjacent-sibling > div > h4 + p {
+  color: purple;
+  font-style: italic;
+}
+
+.adjacent-sibling .box + .box {
+  border: 2px solid blue;
+}
+
+/* =================================
+   General siblings
+   ================================= */
+/* alt + 126 (tastierino numerico) */
+
+.general-sibling .container p ~ ul:not(span + ul) {
+  background-color: paleturquoise;
+}
+
+.general-sibling .box ~ .box {
+  border: 2px solid red;
+}
+
+/* =================================
+   Child Selector
+   ================================= */
+.child-selector .box:first-of-type {
+  border: 2px solid purple;
+}
+.child-selector .box:nth-of-type(12) {
+  border: 2px solid red;
+}
+.child-selector .box:nth-of-type(4) {
+  border: 2px solid green;
+}
+
+/* .child-selector .box:nth-of-type(2n + 7) {
+  background-color: yellow;
+} */
+.child-selector .box:nth-of-type(even) {
+  background-color: rgb(0, 255, 157);
+}
+.child-selector .box:nth-of-type(odd) {
+  background-color: yellow;
+}
+
+.child-selector .box:last-of-type {
+  border: 2px solid peru;
+}
+
+/* =================================
+   Attributes
+   ================================= */
+
+.attribute a[href^="https"] {
+  color: green;
+}
+
+.attribute a[href^="https"]::before {
+  content: "🔒";
+}
+
+.attribute a[href^="http://"]
+{
+  color: red;
+}
+
+.attribute a[href^="http://"]::before
+{
+  content: "🔓";
+}
+
+.attribute a[href$=".html"] {
+  color: purple;
+}
+.attribute a[href$=".pdf"] {
+  color: black;
+}
+
+.attribute a[class|="link"] {
+  text-decoration: none;
+}
+
+/* =================================
+   Inputs
+   ================================= */
+.inputs input[placeholder~="User" i] {
+  border: 2px solid red;
+}
+/* =================================
+   Before / After
+   ================================= */
+.before-after .box::before {
+  content: ">>";
+  color: green;
+}
+
+.before-after .box::after {
+  content: "<<";
+  color: red;
+}
+/* =================================
+   Target Selector
+   ================================= */

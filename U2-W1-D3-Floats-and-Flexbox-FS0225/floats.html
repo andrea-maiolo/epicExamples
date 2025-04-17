@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U2-W1-D3</title>
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            background-color: aquamarine;
+        }
+
+        header span {
+            font-size: 30px;
+        }
+
+        header ul {
+            margin: 0;
+        }
+
+        header ul li {
+            display: inline-block;
+        }
+
+        header nav {
+            float: right;
+            line-height: 2.5;
+        }
+
+        .container {
+            max-width: 700px;
+            margin-inline: auto;
+            border: 2px solid black;
+        }
+
+        article {
+            padding-top: 1rem;
+        }
+
+        article img {
+            width: 200px;
+            float: left;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+        }
+
+        /* .clearfix {
+            clear: both;
+        } */
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .col {
+            float: left;
+            width: 33.333%;
+        }
+
+        .aqua {
+            background-color: aqua;
+        }
+
+        .coral {
+            background-color: coral;
+        }
+
+        .crimson {
+            background-color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+
+        <div class="container clearfix">
+            <header class="clearfix">
+                <span>Logo</span>
+                <nav>
+                    <ul>
+                        <li>item1</li>
+                        <li>item2</li>
+                        <li>item3</li>
+                        <li>item4</li>
+                    </ul>
+                </nav>
+            </header>
+            <article>
+                <img src="https://images.unsplash.com/photo-1734630630491-458df4f38213?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="mountains">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel reprehenderit magnam dolores eveniet
+                    nemo eaque in expedita. Animi omnis ullam iste ratione quod suscipit adipisci eaque perferendis
+                    labore! Iure, nisi!
+                    Iure ipsum voluptatem vel corporis reprehenderit? Iure eligendi quod laudantium voluptates dolores
+                    in doloremque quaerat praesentium. Cupiditate repellendus eum, deleniti, non itaque ipsam, nostrum
+                    ullam cum distinctio unde ipsa odio.
+                    Odio ullam, reiciendis ab odit nulla commodi quis saepe necessitatibus veritatis beatae, esse illo
+                    ipsam temporibus ex nobis delectus, expedita quod similique. Voluptates praesentium maiores
+                    molestiae consequuntur deleniti velit excepturi.
+                </p>
+
+
+                <!-- <div class="clearfix"></div> -->
+            </article>
+            <!-- <footer>Epicode &copy;</footer> -->
+
+
+        </div>
+    </main>
+    <div class="clearfix" style="margin-top: 3rem">
+
+        <div class="col aqua">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, neque magnam? Corrupti
+            unde
+            reprehenderit saepe fuga vel assumenda itaque. Consectetur aperiam ipsa libero a molestias consequuntur,
+            deserunt aliquam repellat dolore!</div>
+        <div class="col coral">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, neque magnam? Corrupti
+            unde
+            reprehenderit saepe fuga vel assumenda itaque. Consectetur aperiam ipsa libero a molestias consequuntur,
+            deserunt aliquam repellat dolore!</div>
+        <div class="col crimson">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, neque magnam?
+            Corrupti
+            unde
+            reprehenderit saepe fuga vel assumenda itaque. Consectetur aperiam ipsa libero a molestias consequuntur,
+            deserunt aliquam repellat dolore!</div>
+
+    </div>
+
+</body>
+
+</html>

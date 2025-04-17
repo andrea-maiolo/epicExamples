@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U2-W1-D4 Transforms</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .n1 {
+            transform: translate(6px, -10px);
+        }
+
+        .n2 {
+            transform: translateX(30px);
+        }
+
+        .n3 {
+            transform: translateY(10px);
+        }
+
+        .n4 {
+            transform: rotate(15deg);
+        }
+
+        .n5 {
+            transform: rotateX(70deg);
+        }
+
+        .n6 {
+            transform: rotateY(70deg);
+            transform-origin: left
+        }
+
+        .n7 {
+            transform: skew(15deg);
+        }
+
+        .n8 {
+            transform: skewX(70deg);
+        }
+
+        .n9 {
+            transform: skewY(10deg);
+            transform-origin: left
+        }
+
+        .n10 {
+            transform: scale(1.1);
+        }
+
+        .n11 {
+            transform: scaleX(0.7);
+        }
+
+        .n12 {
+            transform: scaleY(1.2);
+        }
+
+        .n13 {
+            transform: perspective(1000px) translate3d(0, 0, 200px);
+        }
+
+        .n14 {
+            transform: rotateY(298deg) rotateX(0deg) scaleZ(4.1);
+            transform-style: preserve-3d;
+            height: 300px;
+        }
+
+        .n14 div:first-of-type {
+            transform: rotateY(18deg);
+            width: 100%;
+        }
+
+        .n14 div:last-of-type {
+            transform: rotateY(64deg);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Transforms</h1>
+    <div class="container">
+        <h2>Translate</h2>
+        <div class="rectangle n1 aqua">x e y</div>
+        <div class="rectangle n2 coral">x</div>
+        <div class="rectangle n3 crimson">y</div>
+
+        <h2>Rotate</h2>
+        <div class="rectangle n4 aqua">x e y</div>
+        <div class="rectangle n5 coral">x</div>
+        <div class="rectangle n6 crimson">y</div>
+
+        <h2>Skew</h2>
+        <div class="rectangle n7 aqua">x e y</div>
+        <div class="rectangle n8 coral">x</div>
+        <div class="rectangle n9 crimson">y</div>
+
+        <h2>Scale</h2>
+        <div class="rectangle n10 aqua">x e y</div>
+        <div class="rectangle n11 coral">x</div>
+        <div class="rectangle n12 crimson">y</div>
+
+        <h2>Perspective 3D</h2>
+        <div class="rectangle n13 aqua">translateZ</div>
+        <div class="rectangle n14 coral">scaleZ
+
+            <div class="aqua">child 1</div>
+            <div class="green">child 2</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

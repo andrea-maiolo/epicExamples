@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>U2-W1-D4 Animations</title>
+    <style>
+        body {}
+
+        .fadeIn {
+            animation: fadeIn 3s 5s backwards;
+        }
+
+        .container {
+            height: 600px;
+        }
+
+        @keyframes squareMove {
+            0% {
+                transform: translate(100px, 0);
+                background-color: purple;
+            }
+
+            25% {
+                transform: translate(520px, 0);
+                background-color: crimson;
+            }
+
+            50% {
+                transform: translate(520px, 500px);
+                background-color: palegoldenrod
+            }
+
+            75% {
+                transform: translate(0, 500px);
+                background-color: aquamarine
+            }
+
+            100% {
+                transform: translate(0, 100px);
+                background-color: palegreen;
+            }
+        }
+
+        .n1 {
+            animation: squareMove 4s ease-in-out 3s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Animations</h2>
+        <div class="rectangle n1 aqua">1</div>
+    </div>
+
+
+
+
+</body>
+
+</html>

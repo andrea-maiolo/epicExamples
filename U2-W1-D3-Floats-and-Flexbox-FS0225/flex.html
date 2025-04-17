@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U2-W1-D3-Flex</title>
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 700px;
+            margin-inline: auto;
+
+            background-color: #ebebeb;
+            border-radius: 6px;
+            padding: 1rem;
+
+            display: flex;
+            margin-bottom: 1rem;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border-radius: 4px;
+        }
+
+        .green {
+            background-color: palegreen;
+        }
+
+        .aqua {
+            background-color: aqua;
+        }
+
+        .coral {
+            background-color: coral;
+        }
+
+        .crimson {
+            background-color: crimson;
+        }
+
+        .n2 {
+            flex-direction: row-reverse;
+        }
+
+        .n3,
+        .n4,
+        .n8 {
+            min-height: 50vh;
+        }
+
+        .n3 {
+            flex-direction: column;
+        }
+
+        .n4 {
+            flex-direction: column-reverse;
+        }
+
+        .n5 {
+            justify-content: flex-end;
+        }
+
+        .n6 {
+            justify-content: center;
+        }
+
+        .n7 {
+            justify-content: space-between;
+        }
+
+        .n8 {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .n9 {
+            align-items: center;
+            min-height: 40vh;
+            justify-content: center;
+        }
+
+        .n10 {
+            flex-direction: column;
+            align-items: center;
+            min-height: 55vh;
+            justify-content: center;
+        }
+
+        .n11 {
+            align-items: baseline;
+            justify-content: center;
+        }
+
+        .n11 img {
+            display: block;
+        }
+
+        .n11 .box {
+            height: unset;
+        }
+
+        .n12 {
+            flex-direction: column;
+            align-items: stretch;
+            min-height: 40vh;
+            justify-content: center;
+        }
+
+        .n12 .box {
+            width: unset;
+            height: unset;
+        }
+
+        .n13 {
+            flex-wrap: wrap;
+        }
+
+        .n14 {
+            flex-wrap: wrap;
+            align-content: flex-start;
+            min-height: 40vh;
+            padding: 0;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Flexbox</h1>
+    <h2>Direction: row</h2>
+    <div class="container">
+        <div class="box green">1</div>
+        <div class="box aqua">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson">4</div>
+    </div>
+
+    <h2>Direction: row-reverse</h2>
+    <div class="container n2">
+        <div class="box green">1</div>
+        <div class="box aqua">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson">4</div>
+    </div>
+
+    <h2>Direction: column</h2>
+    <div class="container n3">
+        <div class="box green">1</div>
+        <div class="box aqua">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson">4</div>
+    </div>
+
+    <h2>Direction: column-reverse</h2>
+    <div class="container n4">
+        <div class="box green">1</div>
+        <div class="box aqua">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson">4</div>
+    </div>
+
+
+    <h2>justify-content: flex-end</h2>
+    <div class="container n5">
+        <div class="box green">1</div>
+        <div class="box aqua">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson">4</div>
+    </div>
+
+    <h2>justify-content: center</h2>
+    <div class="container n6">
+        <div class="box green">1</div>
+        <div class="box aqua">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson">4</div>
+    </div>
+
+    <h2>justify-content: space between</h2>
+    <div class="container n7">
+        <div class="box green">1</div>
+        <div class="box aqua">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson">4</div>
+    </div>
+
+    <h2>direction column - justify-content: center </h2>
+    <div class="container n8">
+        <div class="box green">1</div>
+        <div class="box aqua">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson">4</div>
+    </div>
+
+    <h2>Direction row - align-items: center, justify-content: center</h2>
+    <div class="container n9">
+        <div class="box green">1</div>
+        <div class="box aqua">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson">4</div>
+    </div>
+
+    <h2>Direction column - align-items: center, justify-content: center </h2>
+    <div class="container n10">
+        <div class="box green">1</div>
+        <div class="box aqua">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson">4</div>
+    </div>
+
+    <h2> align-items: baseline</h2>
+    <div class="container n11">
+        <div class="box green"><img src="https://picsum.photos/200/300" alt="" width="100%">lorem ipsum</div>
+        <div class="box aqua"><img src="https://picsum.photos/100/200" alt="" width="100%">Lorem ipsum dolor sit amet
+            consectetur
+            adipisicing elit. Sunt, sit!</div>
+        <div class="box coral"><img src="https://picsum.photos/50/50" alt="" width="100%">Lorem ipsum dolor, sit amet
+            consectetur
+            adipisicing elit. Delectus natus nam odio!
+            Voluptatum minima iusto blanditiis natus, obcaecati veritatis! Et corrupti voluptate repellendus blanditiis
+            cumque placeat, delectus eaque sit reiciendis.</div>
+        <div class="box crimson"><img src="https://picsum.photos/300/200" alt="" width="100%">Lorem ipsum dolor sit
+            amet.</div>
+    </div>
+
+    <h2>Direction column - align-items: stretch </h2>
+    <div class="container n12">
+        <div class="box green">1</div>
+        <div class="box aqua">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson">4</div>
+    </div>
+
+    <h2>Flex wrap</h2>
+    <div class="container n13">
+        <div class="box green">1</div>
+        <div class="box aqua">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson">4</div>
+    </div>
+
+    <h2>Flex wrap</h2>
+    <div class="container n14">
+        <div class="box green">1</div>
+        <div class="box aqua">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson">4</div>
+    </div>
+
+    <hr>
+
+    <h3>Proprietà di Flex Items</h3>
+
+    <h2>Order</h2>
+    <!-- dato un valore base di order: 0 su tutti gli elementi, chi riceverà -1 diventerà automaticamente il primo, chi riceverà un valore positivo >= 1 diventa l'ultimo -->
+    <div class="container n15">
+        <div class="box green">1</div>
+        <div class="box aqua" style="order: 1">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson" style="order: -1">4</div>
+        <div class="box aqua">5</div>
+        <div class="box green">6</div>
+    </div>
+
+    <h2>Flex-grow</h2>
+    <!-- Ci permette di far crescere uno o più elementi per una determinata unità di spazio extra presente nel contenitore-->
+    <div class="container n16">
+        <div class="box green">1</div>
+        <div class="box aqua" style="flex-grow: 1">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson" style="flex-grow: 5">4</div>
+    </div>
+
+    <h2>Flex-shrink</h2>
+    <!-- Ci permette di determinare se un elemento possa schiacciarsi e a quale "velocità" sempre dando una proporzione con numeri positivi-->
+    <div class="container n17">
+        <div class="box green">1</div>
+        <div class="box aqua" style="flex-shrink: 0">2</div>
+        <div class="box coral">3</div>
+        <div class="box crimson" style="flex-shrink: 5"></div>
+    </div>
+
+</body>
+
+</html>

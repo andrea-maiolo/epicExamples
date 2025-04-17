@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+main {
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.container {
+  background-color: #ebebeb;
+  padding: 1rem;
+  border-radius: 10px;
+  min-height: 30vh;
+}
+
+.box {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+}
+
+.aqua {
+  background-color: aqua;
+}
+
+.coral {
+  background-color: coral;
+}
+
+.crimson {
+  background-color: crimson;
+}

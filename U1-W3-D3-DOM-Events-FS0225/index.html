@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U1-W3-D3 DOM Events</title>
+</head>
+
+<body>
+
+    <h1>DOM Events</h1>
+    <h2>Gli eventi possono essere applicati in 3 modi diversi:</h2>
+    <ol>
+        <li>IN LINEA - sul tag HTML</li>
+        <li>TRAMITE PROPRIETA' DEL NODO - es. nodo.onclick = nomeFunzione </li>
+        <li>TRAMITE METODO SUL NODO - es. nodo.addEventListener("nomeEvento", nomeFunzione) </li>
+    </ol>
+
+    <h3>IN LINEA come attributo di evento</h3>
+
+    <p>questo metodo lo useremo quando <em>abbiamo già</em> una struttura esistente HTML al quale vogliamo applicare
+        degli eventi</p>
+    <!-- in questo contesto non è sbagliato applicare le tonde al nome della funzione, non implica una chiamata immediata, 
+         ma è semplicemente la sintassi per applicare la funzione all'evento -->
+    <!-- se scrivo ESATTAMENTE event come argomento della funzione il browser mi fornirà l'oggetto di evento con le informazioni specifiche per tipo di evento -->
+    <button onclick="handleInlineEvent(event)">Evento in-line</button>
+
+
+    <h3>EVENTO TRAMITE PROPRIETA' DEL NODO</h3>
+    <p>per applicare questo metodo occorrerà selezionare prima il nodo di un elemento della pagina</p>
+
+    <button id="second-btn">Evento da proprietà del nodo</button>
+
+
+    <h3>EVENTO TRAMITE METODO SUL NODO</h3>
+    <p>per applicare questo metodo occorrerà selezionare prima il nodo di un elemento della pagina</p>
+
+    <button id="third-btn">Evento da metodo sul nodo</button>
+
+    <div id="group-elements">
+        <h3>GESTIONE DEL TARGET/CURRENT TARGET</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis doloribus deleniti recusandae dolores
+            porro vel consequatur ut commodi harum, deserunt, itaque quibusdam nulla quis, officiis a minima rerum
+            beatae laboriosam!</p>
+
+        <button>BOTTONE INERTE</button>
+
+    </div>
+
+    <input id="test-input" type="text" placeholder="scrivi qualcosa qui" />
+
+    <script>
+        // EVENTO DI CARICAMENTO DELLA PAGINA
+        window.onload = function () {
+            console.log("PAGINA CARICATA")
+        }
+
+        console.dir(window)
+        // EVENTO ASSOCIATO ALL'ATTRIBUTO DEL BOTTONE NELL'HTML
+        const handleInlineEvent = function (event) {
+            console.log("Evento in linea scatenato con una funzione esterna")
+            console.log(event) // è l'oggetto di PointerEvent, con informazioni riguardo puntatore, posizione dell'elemento, target (nodo), ecc...
+            console.log(event.target) // è il nodo dell'elemento cliccato
+        }
+
+        // EVENTO ASSOCIATO ALLA PROPRIETA' DEL NODO DEL DOM
+
+        // prima prelevo il riferimento al nodo
+        const secondBtn = document.getElementById("second-btn")
+        // poi gli associo l'evento sfruttando una delle proprietà esistenti sul nodo, che cambierà valore da null alla mia funzione
+        // secondBtn.onclick = function (event) { // ✅ metodo valido di applicazione di una funzione come valore di proprietà di evento
+        //     console.log("Evento applicato a proprietà del nodo")
+        // }
+
+        const handleSecondBtnClick = function (e) {
+            console.log("Evento applicato a proprietà del nodo")
+            console.log(e.target)
+        }
+
+        // secondBtn.onclick = handleSecondBtnClick() //❌ MAI AVVIARE LE FUNZIONI CHE ASSCIAMO AGLI EVENTI
+        secondBtn.onclick = handleSecondBtnClick // ✅ applichiamo il riferimento di una variabile che contiene una funzione SENZA INVOCARLA!
+        console.dir(secondBtn)
+
+        // EVENTO APPICATO COME METODO SUL NODO 
+        // rispetto al metodo precedente, qui si perde l'"on" nel nome dell'evento, ma si associa sempre una funzione
+        const thirdBtn = document.getElementById("third-btn")
+
+        thirdBtn.addEventListener("click", function (e) { //  ✅ metodo valido di applicazione di funzione al metodo addEventListener
+            console.log("Evento applicato come metodo sul nodo")
+            console.log(e.target)
+        })
+
+        // const handleThirdBtnClick = function () {
+        //     console.log("Evento applicato come metodo sul nodo")
+        // }
+
+        // thirdBtn.addEventListener("click", handleThirdBtnClick()) // ❌ MAI AVVIARE LE FUNZIONI CHE ASSCIAMO AGLI EVENTI
+        // thirdBtn.addEventListener("click", handleThirdBtnClick) // ✅ applichiamo il riferimento di una variabile che contiene una funzione SENZA INVOCARLA!
+
+        // questo metodo permette di applicare più eventListener per lo stesso tipo di evento
+
+        thirdBtn.addEventListener("click", function () { //  ✅ metodo valido di applicazione di funzione al metodo addEventListener
+            console.log("ALTRO Evento applicato come metodo sul nodo")
+        }, { once: true })
+        // once true mi permette di distruggere questo event listener dopo la prima esecuzione
+
+
+
+        const groupElements = document.getElementById("group-elements")
+        groupElements.addEventListener("click", function (e) {
+            console.log("TARGET", e.target) // il target è il singolo elemento cliccato (può essere uno degli elementi interni a questo contenitore)
+
+            console.log("CURRENT TARGET", e.currentTarget)// possiamo dire che il currentTarget mi rappresenti SEMPRE il "proprietario" dell'evento
+
+            // e.target.style.backgroundColor = "red"
+            // se voglio che si colori sempre e solo il div group-elements dovrò riferirmi al currentTarget
+            e.currentTarget.style.backgroundColor = "red"
+        })
+
+
+        // GESTIONE DI UN INPUT TRAMITE EVENTI
+        const input = document.getElementById("test-input")
+
+        // l'onchange si esegue quando l'untente preme Enter o quando clicca fuori dall'input
+        // input.onchange = function (e) {
+        //     console.log("l'input è cambiato")
+
+        //     const h1 = document.querySelector("h1")
+        //     h1.innerText = e.target.value
+        // }
+
+        // oninput si scatena ad ogni cambiamento all'interno dell'input
+        // input.oninput = function (e) {
+        //     console.log("oninput scatenato")
+        //     console.log(e.target.value) // il .value si usa solo in combinazione con gli input
+
+        //     const h1 = document.querySelector("h1")
+        //     h1.innerText = e.target.value
+        // }
+
+        // onkeyup rappresenta il momento del rilascio di un tasto della tastiera
+        input.onkeyup = function (e) {
+            console.log("il tasto è stato rilasciato", e)
+
+            const h1 = document.querySelector("h1")
+
+            if (e.key === "Enter") {
+
+                if (e.target.value.length > 3) {
+
+                    h1.innerText = e.target.value
+                } else {
+                    alert("devi inserire almeno 3 lettere")
+                }
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>U2-W1-D4 Transitions</title>
+    <style>
+        .n1 {
+            transition: all 150ms;
+        }
+
+        .n1:hover {
+            transition: width 500ms, height 500ms 500ms;
+            width: 400px;
+            height: 50px;
+        }
+
+
+        .n2 {
+            transition: all 2s;
+        }
+
+        .translate30 {
+            transform: translateX(30px)
+        }
+
+        .n3 {
+            transition: transform 3s;
+            margin-bottom: 2rem;
+        }
+
+        button {
+            border: none;
+            background-color: rgb(52, 88, 247);
+            color: white;
+            font-weight: 600;
+            font-family: inherit;
+            border-radius: 3px;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+        }
+
+        .container button {
+            transition: all 300ms;
+        }
+
+        .container button:hover {
+            transform: scale(1.08) translateY(-5px);
+            box-shadow: 0 10px 20px rgb(0 0 0 / 25%)
+        }
+
+        .card {
+            width: 300px;
+            border: 2px solid gray;
+            border-radius: 30px;
+            margin-inline: auto;
+            overflow: hidden;
+        }
+
+        .card img {
+            display: block;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-top-left-radius: 28px;
+            border-top-right-radius: 28px;
+        }
+
+        .img-wrapper {
+            position: relative;
+        }
+
+        .img-wrapper h2 {
+            position: absolute;
+            bottom: 0;
+            margin: 0;
+            color: rgb(227, 227, 227);
+            line-height: 0.8;
+            font-size: 3rem;
+            letter-spacing: -2px;
+
+            transform: translateX(-102%);
+            transition: transform 0.5s cubic-bezier(0.06, 0.62, 0.59, 1.29);
+        }
+
+        .card-content {
+            padding: 0.5rem;
+        }
+
+        .card-content>* {
+            opacity: 0;
+            transition: opacity 200ms;
+        }
+
+        .card-content button {
+            display: block;
+            margin-inline: auto;
+        }
+
+        .card:hover .img-wrapper h2 {
+            transform: translateX(0)
+        }
+
+        .card:hover .card-content>* {
+            opacity: 1;
+        }
+
+        .card:hover .card-content h3 {
+            transition-delay: 0.5s
+        }
+
+        .card:hover .card-content p:first-of-type {
+            transition-delay: 0.6s
+        }
+
+        .card:hover .card-content p:nth-of-type(2) {
+            transition-delay: 0.7s
+        }
+
+        .card:hover .card-content span {
+            transition-delay: 0.8s
+        }
+
+        .card:hover .card-content button {
+            transition-delay: 0.9s
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Transitions</h2>
+        <div class="rectangle n1 aqua">1 cambio all'hover</div>
+        <div class="rectangle n2 coral" onclick="handleSecondDiv(event)">2 cambio al click</div>
+        <div class="rectangle n3 crimson">3 cambio dopo timeout di 5s</div>
+
+        <button>Click me</button>
+    </div>
+
+    <main>
+        <div class="card">
+            <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1734630630491-458df4f38213?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="mountain">
+                <h2>Climb UP</h2>
+            </div>
+            <div class="card-content">
+                <h3>titolo</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>Autem optio quam, labore, recusandae dolorum
+                    magnam cumque veniam corrupti quod inventore nihil non.</p>
+                <span>2025 &copy;</span>
+                <button>Scopri di più</button>
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        const handleSecondDiv = function (event) {
+            // event.currentTarget.style.backgroundColor = "crimson"
+            event.currentTarget.classList.toggle("crimson")
+        }
+
+        setTimeout(() => {
+
+            const thirdDiv = document.querySelector(".n3")
+            thirdDiv.classList.add("translate30")
+        }, 5000)
+    </script>
+</body>
+
+</html>

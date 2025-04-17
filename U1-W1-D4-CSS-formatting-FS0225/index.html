@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>U1-W1-D4</title>
+
+</head>
+
+<body>
+
+    <!-- per allineare dei blocchi orizzontalmente dovremo cambiare la loro natura di blocchi in elementi inline-block (non inline) -->
+    <!-- fare questo però comporta il fatto che il browser aggiungerà uno spazietto tra gli elementi, che potremmo annullare con la proprietà margin-right: -4px -->
+    <!-- se poi volessimo riempire lo spazio orizzontale in maniera esatta, dovremmo applicare una width in PERCENTUALE % ai nostri elementi -->
+    <!-- potrebbe essere necessario gestire un allineamento verticale di questi elementi con la proprietà vertical-align (sia quando hanno dimensioni diverse, sia quando hanno testi di dimensione diversa) -->
+    <!-- N.B. in ultimo assicurarci di aver impostate box-sizing: border-box, per poter usare liberamente border e padding senza incrementare la dimensione dei nostri elementi! -->
+    <div class="wrapper">
+        <div class="box aqua">lorem ipsum</div>
+        <div class="box coral">lorem ipsum</div>
+        <div class="box crimson">lorem ipsum</div>
+    </div>
+
+    <main>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <img
+                src="https://images.unsplash.com/photo-1741439432848-ae1301dca116?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                height="100">
+            Repellat, nulla adipisci ratione aspernatur quisquam
+            esse, soluta nihil ipsam laborum dolorem quo perspiciatis? Soluta placeat nulla reprehenderit vel,
+            consequatur accusantium magnam.</p>
+
+        <div class="background-image-area">
+            <h2>GALLERY</h2>
+        </div>
+
+        <div class="gradient-area">
+            <h2>SFUMATURA</h2>
+        </div>
+    </main>
+</body>
+
+</html>

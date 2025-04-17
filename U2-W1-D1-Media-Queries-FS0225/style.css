@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* breakpoint standard */
+
+/* 
+0px fino a 575px ==> mobile
+576px fino a 767px ==> tablet
+768px fino a 991px ==> medium
+992px fino a 1199px ==> large
+1200px fino a 1399px ==> x-large
+1400px fino a Infinito ==> xx-large
+
+*/
+
+/* max-width prevede una fine, ad una determinata dimensione, di applicazione dei nostri stili */
+/* min-width prevede un inizio, ad una determinata dimensione, di applicazione dei nostri stili */
+
+/* 0px ~ 700px */
+/* @media screen and (max-width: 700px) { */
+/* qui sto agendo da 0px a 700 incluso come range di applicazione di questi stili */
+
+/* h1 {
+    font-weight: 300;
+    font-size: 60px;
+  }
+  main {
+    background-color: palegreen;
+    padding: 2rem;
+    text-align: center;
+  }
+} */
+
+/* 0px ~ 500px */
+/* @media screen and (max-width: 500px) { */
+/* qui sto agendo da 0px a 700 incluso come range di applicazione di questi stili */
+
+/* h1 {
+    font-weight: 800;
+    font-size: 20px;
+  }
+} */
+
+/* con l'approccio mobile-first andiamo a dare per assodato che le definizioni base sugli elementi si applichino da mobile in su */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+main {
+  background-color: palegreen;
+  padding: 2rem;
+  text-align: center;
+}
+main img {
+  display: none;
+}
+/* se devo cambiare comportamenti, andrò ad aggiungere media query da un punto in poi (min-width) */
+
+@media screen and (min-width: 576px) {
+  h1 {
+    font-weight: 300;
+    font-size: 60px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  main {
+    /* resettare un valore lo si può fare con initial, unset, inherit */
+    background-color: unset;
+    padding: unset;
+    text-align: inherit;
+  }
+
+  main img {
+    display: inline-block;
+    width: 400px;
+  }
+}
+
+/* 900px ~ Ifinito */
+@media screen and (min-width: 900px) {
+  main {
+    background-color: palevioletred;
+    color: white;
+  }
+}
+
+/* 1200px ~ Ifinito */
+@media screen and (min-width: 1200px) {
+  main {
+    background-color: peachpuff;
+  }
+}
+
+/* range predefinito  */
+/* 701px ~ 899px */
+
+@media screen and (min-width: 701px) and (max-width: 899px) {
+  main button {
+    display: none;
+  }
+}
+
+@media print {
+  h1 {
+    font-size: 100px;
+    font-weight: 600;
+    color: red;
+  }
+
+  button {
+    display: none;
+  }
+  ul {
+    text-align: left;
+  }
+}

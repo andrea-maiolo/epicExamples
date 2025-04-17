@@ -1,0 +1,262 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+}
+
+.btn-reset {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+}
+
+input,
+textarea,
+select, .btn-reset {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 530px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1370px;
+  }
+}
+
+main section {
+  padding-block: 1.5rem;
+}
+@media screen and (min-width: 576px) {
+  main section {
+    padding-block: 0.5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  main section {
+    padding-block: 3rem;
+  }
+}
+main section:nth-of-type(even) {
+  background-color: #ebebeb;
+}
+main section ul {
+  padding-inline-start: unset;
+}
+main section ul li {
+  margin-right: 0.5rem;
+}
+main section ul li:hover::marker {
+  content: "📌";
+}
+main section ul li:active::marker {
+  content: "📍";
+}
+main section ul:hover {
+  background-color: antiquewhite;
+}
+main section .button {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 7px 12px;
+  border: 1px solid #d5d5d5;
+  background-image: linear-gradient(#eee, #ddd);
+  font: 700 13px/18px Helvetica, arial;
+}
+main section .button--state-success {
+  color: #fff;
+  background: #569e3d linear-gradient(#79d858, #569e3d) repeat-x;
+  border-color: #4a993e;
+}
+main section .button--state-danger {
+  color: #900;
+}
+
+.header__nav__list__item {
+  padding-block: 1rem;
+}
+
+.btn, .btn-alt {
+  background-color: paleturquoise;
+  color: #125555;
+  padding: 0.25rem 1rem;
+  font-size: 1.2rem;
+  font-family: inherit;
+  font-weight: 500;
+  border: 1px solid #5adcdc;
+  border-radius: 0;
+}
+
+.btn-alt {
+  background-color: #eeafaf;
+  border-color: #dc5a5a;
+  color: #551212;
+}
+
+.box-1 {
+  width: 200px;
+  height: 200px;
+  margin-block: 2rem;
+  display: inline-block;
+  vertical-align: bottom;
+  border-radius: 10px;
+  border: 2px solid #370060;
+  color: white;
+  background-color: rgb(73, 0, 128);
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.55);
+}
+
+.box-2 {
+  width: 200px;
+  height: 200px;
+  margin-block: 2rem;
+  display: inline-block;
+  vertical-align: bottom;
+  border-radius: 30px;
+  border: 4px solid #600060;
+  color: white;
+  background-color: purple;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.55);
+}
+
+.box-3 {
+  width: 200px;
+  height: 200px;
+  margin-block: 2rem;
+  display: inline-block;
+  vertical-align: bottom;
+  border-radius: 20px;
+  border: 1px solid #37f737;
+  color: white;
+  background-color: palegreen;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.55);
+}
+
+.box-4 {
+  width: 150px;
+  height: 150px;
+  margin-block: 2rem;
+  display: inline-block;
+  vertical-align: bottom;
+  border: 2px solid black;
+  background-color: coral;
+  border-radius: 10px;
+}
+
+.box-5 {
+  width: 150px;
+  height: 150px;
+  margin-block: 2rem;
+  display: inline-block;
+  vertical-align: bottom;
+  border: 2px solid black;
+  background-image: url("https://images.unsplash.com/photo-1742943892627-f7e4ddf91224?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+}
+
+.custom-padding-1 {
+  padding: 10px;
+}
+
+.custom-padding-2 {
+  padding: 20px;
+}
+
+.custom-padding-3 {
+  padding: 30px;
+}
+
+.custom-padding-4 {
+  padding: 40px;
+}
+
+.custom-padding-5 {
+  padding: 50px;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.bg-green {
+  background-color: green;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+
+.bg-purple {
+  background-color: purple;
+}
+
+.bg-orange {
+  background-color: orange;
+}
+
+.square-red {
+  background-color: #e02c44;
+}
+
+.square-green {
+  background-color: #00803a;
+}
+
+.square-blue {
+  background-color: #0040ff;
+}
+
+.square-orange {
+  background-color: #ff9100;
+}/*# sourceMappingURL=style.css.map */

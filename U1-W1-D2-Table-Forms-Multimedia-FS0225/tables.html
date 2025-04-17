@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U1-W1-D2 Tables</title>
+    <style>
+        table#first {
+            border: 4px dotted black;
+        }
+
+        table#first th {
+            text-align: left;
+            background-color: palegoldenrod;
+        }
+
+        table#first td {
+            background-color: lightsalmon;
+        }
+
+        table#second {
+            border-collapse: collapse;
+        }
+
+        table#second td {
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Tables</h1>
+
+    <h4>Prima tabella: modificate alcune celle nello spazio occupato, applicato colore e bordo tratteggiato alla tabella
+    </h4>
+    <table id="first" style="width: 100%">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Età</th>
+                <th>Telefono</th>
+                <th>Indirizzo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- rowspan permette ad una cella di estendersi in verticale per un certo numero di spazi -->
+                <td rowspan="4">Stefano</td>
+                <td rowspan="4">Miceli</td>
+                <td>35</td>
+                <td>12371273812</td>
+                <td>Via delle rose 35</td>
+            </tr>
+            <tr>
+
+                <td>35</td>
+                <!-- colspan permette alla cella di estendersi per due spazi in orizzontale -->
+                <td colspan="2">12371273812</td>
+
+            </tr>
+            <tr>
+
+
+                <td>35</td>
+                <td>12371273812</td>
+                <td>Via delle rose 35</td>
+            </tr>
+            <tr>
+
+
+                <td>35</td>
+                <td>12371273812</td>
+                <td>Via delle rose 35</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" style="background-color: black; color: white; text-align: center">FS0225</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+    <!-- in questa tabella vogliamo dare un bordo alle singole celle, in modo che non si sommino tra loro -->
+    <!-- andremo a modificare la spaziatura tra le celle (border-spacing) impostandolo a 0 -->
+    <!-- contemporaneamente applicheremo un bordo a tutte le td di questa tabella -->
+    <!-- e imposteremo il valore di border-collapse a collapse, in modo che i bordi di 2px si sovrappongano invece di sommarsi -->
+    <h4>Gestione del bordo sulle singole celle</h4>
+    <table id="second" style="width: 100%">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Età</th>
+                <th>Telefono</th>
+                <th>Indirizzo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Stefano</td>
+                <td>Miceli</td>
+                <td>35</td>
+                <td>12371273812</td>
+                <td>Via delle rose 35</td>
+            </tr>
+            <tr>
+                <td>Stefano</td>
+                <td>Miceli</td>
+                <td>35</td>
+                <td>12371273812</td>
+                <td>Via delle rose 35</td>
+            </tr>
+            <tr>
+                <td>Stefano</td>
+                <td>Miceli</td>
+                <td>35</td>
+                <td>12371273812</td>
+                <td>Via delle rose 35</td>
+            </tr>
+            <tr>
+                <td>Stefano</td>
+                <td>Miceli</td>
+                <td>35</td>
+                <td>12371273812</td>
+                <td>Via delle rose 35</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" style="background-color: black; color: white; text-align: center">FS0225</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+
+    <!-- in questo esempio vogliamo avere la possibilità di applicare un bordo rosso alla seconda row del tbody -->
+    <!-- per fare questo NON dovrà essere presente il valore border-collapse: separate (default), ma dovrà essere impostato su collapse ==> border-collapse: collapse -->
+    <!-- a questo punto possiamo tranquillamente applicare alle tr il bordo, a tutte o ad una in particolare -->
+    <h4>Gestione del bordo su una singola riga</h4>
+    <table id="third" style="width: 100%; border-collapse: collapse">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Età</th>
+                <th>Telefono</th>
+                <th>Indirizzo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Stefano</td>
+                <td>Miceli</td>
+                <td>35</td>
+                <td>12371273812</td>
+                <td>Via delle rose 35</td>
+            </tr>
+            <tr style="border: 2px solid red">
+                <td>Stefano</td>
+                <td>Miceli</td>
+                <td>35</td>
+                <td>12371273812</td>
+                <td>Via delle rose 35</td>
+            </tr>
+            <tr>
+                <td>Stefano</td>
+                <td>Miceli</td>
+                <td>35</td>
+                <td>12371273812</td>
+                <td>Via delle rose 35</td>
+            </tr>
+            <tr>
+                <td>Stefano</td>
+                <td>Miceli</td>
+                <td>35</td>
+                <td>12371273812</td>
+                <td>Via delle rose 35</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" style="background-color: black; color: white; text-align: center">FS0225</td>
+            </tr>
+        </tfoot>
+
+    </table>
+</body>
+
+</html>

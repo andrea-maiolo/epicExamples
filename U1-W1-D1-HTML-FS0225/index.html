@@ -1,0 +1,146 @@
+<!-- per una lista di tag disponibili puoi fare riferimento a questo link: -->
+<!-- https://www.w3schools.com/TAgs/ -->
+
+<!-- il tag DOCTYPE serve ad impostare il linguaggio come HTML5 -->
+<!-- dimenticarsi di inserirlo farà comportare il browser in maniera "imprevedibile" con la cosiddetta "quirks mode" -->
+<!-- questo dovrà essere il primo tag in assoluto -->
+<!DOCTYPE html>
+<!-- abbiamo un altro tag principale chiamato HTML, rappresenta l'intero documento -->
+<html>
+
+<head>
+    <!-- head è il tag che racchiude tutte le meta-informazioni che costituiscono una sorta di configurazione per il nostro documento 
+                    qui inseriremo tag <meta>, <title>, <link>, ecc... -->
+
+    <!-- charset specifica il set di caratteri, UTF-8 è quello dei caratteri occidentali -->
+    <meta charset="UTF-8">
+    <!-- viewport applica una scala iniziale uguale alla device-width, in modo da non avere porzioni di layout che vadano fuori dallo schermo -->
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <!-- description applica una descrizione del contenuto della pagina. potrebbe essere visualizzata in caso di condivisione del link -->
+    <meta name="description" content="My first HTML page">
+    <!-- title è l'unica informazione effettivamente visibile da subito per l'utente -->
+    <title>U1-W1-D1</title>
+
+</head>
+
+<body>
+    <!-- qui dentro inseriremo i tag che andranno a creare l'effettiva struttura del nostro layout -->
+    <!-- saranno cose che il nostro utente potrà visualizzare -->
+    <h1 style="display: inline;">Titolo per la pagina</h1>
+
+    <p style="display: inline;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, corrupti!</p>
+
+    <!-- tag come a, strong, em, span sono di tipo inline e non interferiscono con la formattazione del testo -->
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <a href="https://google.it" target="_blank">Voluptate nisi consectetursint</a>
+        , <strong>labore maiores in nulla</strong>
+        <em>id veniam</em>, laboriosam laudantium aspernatur assumenda illo aut esse.
+
+        <!-- br (break) serve a creare un ritorno di linea manuale -->
+        <br> Voluptates et recusandae cum neque.
+    <div>
+        <!-- nell'utilizzare un div (tag di tipo block) nel contesto di un testo, ci verrà creata una separazione netta.
+         
+        questo div pretenderà tutto lo spazio orizzontale 
+        (indipendentemente dal fatto che ci sia o meno dell'altro spazio da utilizzare sulla destra)
+        
+        -->
+        Voluptatibus beatae aut natus reiciendis illum molestiae quos. Doloribus soluta corporis a veniam ad, libero
+        asperiores aliquid molestiae ipsum facere sit eius rem sed non quae earum, quo debitis reiciendis?
+    </div>
+    Deleniti dolor eligendi, libero earum illo accusamus quo eveniet animi, quis id at porro aut numquam. Facere,
+    vel incidunt qui, nostrum sint maiores rerum amet beatae neque libero quasi. Odit.
+
+    <!-- utilizziamo uno span quando vogliamo creare una differenza di stile in parte del blocco di un testo -->
+    <span style="color: red; text-decoration: underline;">
+        Doloribus cum corporis, voluptate repudiandae dolores nemo corrupti deleniti quis perferendis incidunt eveniet,
+        quaerat, rem nesciunt unde inventore fugit iure error ex quidem asperiores! Placeat doloremque dolores commodi
+        nam perspiciatis?
+    </span>
+    Vel culpa enim debitis, molestias earum id aliquam ad ex dolor vero maxime fugiat tempora soluta sapiente magni
+    in! Beatae ut, rem iste distinctio deleniti pariatur dolore unde excepturi alias.
+    </p>
+
+    <!-- possiamo anche usare degli span come elementi semplici di tipo inline, se non vogliamo impegnare l'intera riga orizzontale -->
+
+    <!-- questi due elementi si affiancheranno naturalmente -->
+    <span>sono uno span solitario</span>
+    <span>sono un fratello dello span precedente</span>
+
+    <!-- hr (horizontal ruler) - linea orizzontale di separazione -->
+    <hr>
+
+    <!-- LISTE -->
+
+    <!-- non ordinata (unordered list), con un elenco puntato -->
+    <ul>
+        <li>primo elemento</li>
+        <li>secondo elemento</li>
+        <li>terzo elemento</li>
+        <li>
+            <ol>
+                <li>item</li>
+                <li>item</li>
+                <li>item</li>
+            </ol>
+        </li>
+    </ul>
+
+    <!-- ordinata (ordered list), con un elenco numerato -->
+    <ol>
+        <li>elemento</li>
+        <li>elemento</li>
+        <li>elemento</li>
+    </ol>
+
+    <!-- esempio di utilizzo del tag abbr -->
+    <ul>
+        <li><abbr title="Hyper Text Markup Language">HTML</abbr></li>
+        <li><abbr title="Cascading Style Sheet">CSS</abbr></li>
+        <li><abbr title="JavaScript">JS</abbr></li>
+    </ul>
+
+
+    <!-- esempio di utilizzo del tag code e codici "character entity reference" -->
+    <!-- https://tools.w3cub.com/html-entities -->
+    <p>
+        il modo per aprire un paragrafo è usare il tag <code>&lt;p&gt;</code>
+    </p>
+
+    <!-- IMMAGINE - tag autoconclusivo (non può avere figli) -->
+
+    <!-- le immagini nascono come display: inline-block di default -->
+    <!-- <img src="https://link-immagine" width="pixel (optional)" height="pixel (optional)"> -->
+
+    <!-- allineamento centrato metodo 1) -->
+    <!-- l'immagine inserita in un div con text-align center si porterà al centro del blocco creato dal div -->
+    <div style="text-align: center">
+        <img src="https://plus.unsplash.com/premium_photo-1738854511313-799f13b4d3ff?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            height="400">
+    </div>
+    <!-- allineamento centrato metodo 2) -->
+    <!-- l'immagine cambia natura e diventa di blocco, il margine sinistro e destro automatico la farà visualizzare al centro -->
+    <img style="display: block; margin-inline: auto" src="./photo.avif" height="400">
+
+    <!-- utilizzo di link (interni ed esterni) -->
+    <div>
+        <ul>
+            <li>
+                <a href="./contactus.html">Vai a Contatti</a>
+            </li>
+            <li>
+                <a href="https://epicode.com">Esci e vai ad Epicode</a>
+            </li>
+            <li>
+                <!-- la differenza tra il secondo link e questo è la presenza dell'attributo target="_blank" che permette al browser di aprire il link in un nuovo tab, 
+                 lasciando intatto quello corrente -->
+                <a href="https://epicode.com" target="_blank"> vai ad Epicode</a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+
+</html>

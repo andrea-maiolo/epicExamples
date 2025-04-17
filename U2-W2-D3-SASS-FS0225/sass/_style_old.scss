@@ -1,0 +1,283 @@
+// 1) VARIABILI IN SASS
+$main-color: purple;
+$secondary-color: rgb(73, 0, 128);
+
+$font-serif: Georgia, "Times New Roman", Times, serif;
+$font-sans-serif: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+$size-0: 0;
+$size-1: 0.25rem;
+$size-2: 0.5rem;
+$size-3: 1rem;
+$size-4: 1.5rem;
+$size-5: 3rem;
+$size-6: 6rem;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-sans-serif;
+  //   background-color: $main-color;
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: $size-0;
+  //   font-family: $font-serif;
+
+  //   proprietà composta
+  font: {
+    family: $font-serif;
+    weight: 600;
+  }
+}
+
+.container {
+  width: 100%;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+
+  padding: {
+    left: $size-2;
+    right: $size-2;
+  }
+
+  @media screen and (min-width: 576px) {
+    max-width: 530px;
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 730px;
+  }
+  @media screen and (min-width: 992px) {
+    max-width: 970px;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 1170px;
+  }
+  @media screen and (min-width: 1400px) {
+    max-width: 1370px;
+  }
+}
+
+// @media screen and (min-width: 576px) {
+//   .container {
+//     max-width: 530px;
+//   }
+// }
+
+// main section {
+//   padding-block: $size-4;
+// }
+
+// main section ul {
+//   padding-inline-start: unset;
+//   list-style: none;
+// }
+
+// main section ul li {
+//   display: inline-block;
+//   margin-right: $size-2;
+// }
+
+// DRY - Don't Repeat Yourself
+
+// 2) NESTING CSS - Selettori annidati
+
+main {
+  section {
+    padding-block: $size-4;
+
+    @media screen and (min-width: 576px) {
+      padding-block: $size-2;
+    }
+    @media screen and (min-width: 992px) {
+      padding-block: $size-5;
+    }
+
+    &:nth-of-type(even) {
+      background-color: #ebebeb;
+    }
+
+    ul {
+      padding-inline-start: unset;
+      //   list-style: none;
+      li {
+        // display: inline-block;
+        margin-right: $size-2;
+
+        &:hover {
+          // 3) parent selector & (riprende tutti gli elementi nella catena, e aggiunge ::marker alla fine. es. main section ul li::marker )
+          &::marker {
+            content: "📌";
+          }
+        }
+        &:active {
+          &::marker {
+            content: "📍";
+          }
+        }
+      }
+
+      &:hover {
+        background-color: antiquewhite;
+      }
+    }
+
+    .button {
+      display: inline-block;
+      border-radius: 3px;
+      padding: 7px 12px;
+      border: 1px solid #d5d5d5;
+      background-image: linear-gradient(#eee, #ddd);
+      font: 700 13px/18px Helvetica, arial;
+
+      &--state-success {
+        color: #fff;
+        background: #569e3d linear-gradient(#79d858, #569e3d) repeat-x;
+        border-color: #4a993e;
+      }
+
+      &--state-danger {
+        color: #900;
+      }
+    }
+  }
+}
+
+.header {
+  &__nav {
+    &__list {
+      &__item {
+        padding-block: 1rem;
+      }
+    }
+  }
+}
+
+// 4) EXTEND (@extend) - con questa regola possiamo riprendere tutto un precedente blocco di una classe / id / elemento
+
+.btn {
+  background-color: paleturquoise;
+  color: scale-color(paleturquoise, $lightness: -75%);
+  padding: $size-1 $size-3;
+
+  font: {
+    size: 1.2rem;
+    family: inherit;
+    weight: 500;
+  }
+
+  //   possibilità di modificare i colori tramite modulo color di sass:
+  //   https://sass-lang.com/documentation/modules/color/#scale
+  border: 1px solid scale-color(paleturquoise, $lightness: -25%);
+  border-radius: 0;
+}
+
+$btn-color-alt: adjust-hue(paleturquoise, 180deg);
+.btn-alt {
+  @extend .btn;
+  background-color: $btn-color-alt;
+  border-color: scale-color($btn-color-alt, $lightness: -25%);
+  color: scale-color($btn-color-alt, $lightness: -75%);
+}
+
+// 5) PLACEHOLDER (%) - serve a definire dei blocchi di regole CSS che applicheranno i loro valori solamente se utilizzati
+// i placeholder non utilizzati non entreranno a far parte delle regole nel CSS finale
+
+%reset-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+}
+
+%reset-font {
+  font: {
+    family: inherit;
+    weight: inherit;
+    size: inherit;
+  }
+  color: inherit;
+  line-height: inherit;
+}
+
+.btn-reset {
+  @extend %reset-btn, %reset-font; // questo è il momento in cui le proprietà create nel placeholder cominceranno ad esistere nel nostro css finale
+}
+
+input,
+textarea,
+select {
+  @extend %reset-font;
+}
+
+// 6) MIXINS (@mixin) - un blocco di codice CSS -dinamico-, può generarsi anche a partire da valori di parametro
+
+@mixin box($borderSize: 1px, $boxColor: black, $radius: 20px) {
+  width: 200px;
+  height: 200px;
+  margin-block: 2rem;
+  display: inline-block;
+  vertical-align: bottom;
+  border-radius: $radius;
+  border: $borderSize solid scale-color($boxColor, $lightness: -25%);
+  color: white;
+  background-color: $boxColor;
+  box-shadow: 0 3px 20px rgb(0 0 0 / 55%);
+}
+
+.box-1 {
+  @include box(2px, $secondary-color, 10px);
+}
+
+.box-2 {
+  @include box(4px, $main-color, 30px);
+}
+// in SASS c'è la possibilità di valorizzare parametri specifici indipendentemente dalla loro posizione.
+// lo richiamo per nome e lo valorizzo
+.box-3 {
+  @include box($boxColor: palegreen);
+}
+
+@mixin dynamicBox($size, $propertyName, $propertyValue) {
+  width: $size;
+  height: $size;
+  margin-block: 2rem;
+  display: inline-block;
+  vertical-align: bottom;
+  border: 2px solid black;
+
+  // 7) INTERPOLARE VALORI DINAMICI #{}
+  // il suffisso della proprietà background-* dipenderà dal valore del parametro $propertyName
+  // si genererà o come background-image o come background-color
+  background-#{$propertyName}: $propertyValue;
+
+  @if ($propertyName == "image") {
+    background-size: cover;
+  } @else {
+    border-radius: 10px;
+  }
+}
+
+.box-4 {
+  @include dynamicBox(150px, "color", coral);
+}
+
+.box-5 {
+  @include dynamicBox(
+    150px,
+    "image",
+    url("https://images.unsplash.com/photo-1742943892627-f7e4ddf91224?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+  );
+}

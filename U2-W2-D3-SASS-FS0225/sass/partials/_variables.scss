@@ -1,0 +1,18 @@
+// questo come gli altri file in questa cartella è un file parziale.
+// va nominato con un _ davanti al nome, in modo che non vengano creati file css con questo nome
+// essendo un file parziale che non viene compilato direttamente, avrà quindi bisogno di essere ricomposto al file principale.
+// in style.scss troverai infatti degli @import all'inizio che vanno ad includere i vari partials nell'unico file css generato
+
+$main-color: purple;
+$secondary-color: rgb(73, 0, 128);
+
+$font-serif: Georgia, "Times New Roman", Times, serif;
+$font-sans-serif: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+$size-0: 0;
+$size-1: 0.25rem;
+$size-2: 0.5rem;
+$size-3: 1rem;
+$size-4: 1.5rem;
+$size-5: 3rem;
+$size-6: 6rem;
