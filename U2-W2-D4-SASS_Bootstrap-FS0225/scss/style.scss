@@ -1,0 +1,9 @@
+// @import "../bootstrap/scss/bootstrap";
+// non importiamo tutto bootstrap nelle modalità base,
+// ma faremo noi i singoli import, tra i quali ci inseriremo delle sovrascritture
+// e lo facciamo all'interno del nostro file parziale chiamato bootstrap-ovverrides
+@import "./partials/bootstrap-ovverrides";
+
+.hero {
+  background-color: $teal-400;
+}
